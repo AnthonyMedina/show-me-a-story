@@ -1,19 +1,36 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, Fragment } from "react";
+import ReactHowler from "react-howler";
+import "./App.css";
 
 class App extends Component {
+  state = {
+    playing: false
+  };
+
+  play = () => {
+    this.setState({
+      playing: true,
+      ended: false
+    });
+  };
+
+  finishedPlaying = () => {
+    this.setState({
+      ended: true
+    });
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Fragment>
+        <ReactHowler
+          src="http://goldfirestudios.com/proj/howlerjs/sound.ogg"
+          playing={this.state.playing}
+          onEnd={this.finishedPlaying}
+        />
+        {!this.state.playing && <button onClick={this.play}>BEGIN</button>}
+        {this.state.ended && <div>Finished Playing</div>}
+      </Fragment>
     );
   }
 }
