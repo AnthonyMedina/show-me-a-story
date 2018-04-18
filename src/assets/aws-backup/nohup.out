@@ -1,0 +1,4 @@
+Warning: Wiki folder 'Wiki' does not exist or is missing a tiddlywiki.info file
+Serving on 127.0.0.1:8080
+(press ctrl-C to exit)
+Warning: Plugins required for client-server operation ("tiddlywiki/filesystem" and "tiddlywiki/tiddlyweb") are missing from tiddlywiki.info file

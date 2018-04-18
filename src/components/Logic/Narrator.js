@@ -9,9 +9,9 @@ export class Narrator extends Component {
     return (
       <Fragment>
         <Control />
-        <Conversation />
+        <Conversation runLex={this.props.runLex} />
         <Recorder />
-        <Renderer />
+        {/* <script src="../Logic/script.js" /> */}
       </Fragment>
     );
   }

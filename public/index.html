@@ -11,7 +11,22 @@
     -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
   <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-  <script src="/assets/aws/aws-sdk.min.js"></script>
+  <script type="text/javascript" src="%PUBLIC_URL%/aws-sdk.min.js"></script>
+
+  <script type="text/javascript">
+
+    window.lexaudio = {};
+    runLex = false;
+    lexaudio.example();
+    var timestamp = (window.performance.timing.navigationStart + window.performance.now()).toString();
+
+  </script>
+
+  <script type="text/javascript" src="%PUBLIC_URL%/control.js"></script>
+  <script type="text/javascript" src="%PUBLIC_URL%/recorder.js"></script>
+  <script type="text/javascript" src="%PUBLIC_URL%/conversation.js"></script>
+  <script type="text/javascript">setTimeout(function () { lexaudio.example(); }, 500);</script>
+  <!-- <script type="text/javascript" src="%PUBLIC_URL%/worker.js"></script> -->
 
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
