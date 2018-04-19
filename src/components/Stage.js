@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import posed, { PoseGroup } from "react-pose";
 import "./Stage.css";
-import Box from "./Box";
+import Character from "./Box";
 
 class Stage extends Component {
   state = {
@@ -18,7 +18,19 @@ class Stage extends Component {
   };
 
   render() {
-    return <Box />;
+    return (
+      <div
+        className="stage bg"
+        style={{ "background-image": `url(${this.state.location})` }}
+      >
+        <Character>
+          <img className="character" src={this.state.character.image} alt="" />
+        </Character>
+        <Character>
+          <img className="character2" src={this.state.character.image} alt="" />
+        </Character>
+      </div>
+    );
   }
 }
 

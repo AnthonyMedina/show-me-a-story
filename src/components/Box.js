@@ -1,6 +1,16 @@
 import posed, { PoseGroup } from "react-pose";
 import React from "react";
 
-const Box = posed.div({ hidden: { opactity: 0 }, visible: { opactity: 1 } });
+import { spring } from "popmotion";
 
-export default Box;
+const poseProps = {
+  draggable: true,
+  dragBounds: { left: -100, right: 800 },
+  dragEnd: { transition: spring },
+  left: { x: "1000px", delay: 1000, staggerChildren: 1000 },
+  right: { x: "100px", delay: 1000, staggerChildren: 1000 }
+};
+
+const Character = posed.div(poseProps);
+
+export default Character;
